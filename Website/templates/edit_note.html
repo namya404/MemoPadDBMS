@@ -1,0 +1,25 @@
+{% extends "base2.html" %}
+{% block title %}Home{% endblock %}
+
+{% block content%}
+<div style="
+  margin:200px;
+  padding:20px;
+  border:10px solid #878b91;
+  border-radius: 5px;
+  padding-bottom: 80px;">
+<h1 style="margin: 10px" align="center"> Edit Notes</h1>
+
+<form method='POST' action="{{ url_for('views.edit_note', note_id=note.id) }}" style="margin-top: 80px;">
+ <!--  <textarea name="note" id="note" class="form-control" value={{note.data}}></textarea> -->
+  <input class="form-control" type="text" name="note" id= "note" value="{{note.data}}">
+  <br />
+  <div align="center">
+  <input type="submit" class="btn btn-secondary" value="Update">
+</div>
+  <!-- <div align="center">
+    <button type="submit" class="btn btn-primary">Update Note</button>
+  </div> -->
+</form>
+</div>
+{% endblock %}
